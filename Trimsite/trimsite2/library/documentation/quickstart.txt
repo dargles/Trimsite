@@ -1,0 +1,67 @@
+*********************************************************************************
+* Filename:     quickstart.txt                                                  *
+* Version:      15.12.2013, 00:39hr                                             *
+* Author:       David Argles, daargles@gmail.com                                *
+* Description:  This file gives instructions for how to make simple site        *
+*               updates.  The fancy stuff can be found in "howto.txt"           *
+*********************************************************************************
+
+If you want to update the content of a particular page:
+ 
+ 1) All the main page content for a given page exists in the relevant 
+    "pagename.php"; all these pages are held in the main web directory.  So 
+    open the relevant "pagename.php" in a decent text editor.  Either do this 
+    in Linux, or if you must use Windoze, use something like Notepad++.
+    
+ 2) Now update the main page content.  You will see that the only HTML that the 
+    page contains is in the middle - this is what you edit.  There are some 
+    basic rules:
+    - Paragraphs should normally be given simply as <p></p>.  Don't mess about 
+      with any style changes - let the CSS handle everything, it's set up to make 
+      sure that the page content displays correctly at all widths and on all 
+      devices.
+    - Similarly, headers should normally be given as <h3></h3>.  Again, don't 
+      cheat - let the CSS do its work!
+    - Images go in as <img src="whatever.jpg" /> or whatever; same rationale 
+      applies.
+      
+ 3) When you've made a change, you really ought to:
+    - update the @version line towards the top of the file; and
+    - update the updates.txt file in the <documentation> directory.
+    It's important to make a note of the changes you make and ehen you made them.
+
+If you want to add a page to the site:
+
+ 4) Open the <library> directory and *copy!* "template.php" into the main web  
+    folder.  Make sure you copy this file rather than moving it!  
+    
+ 5) Rename the file to be whatever you want to call it - but it *must* end in 
+    ".php".
+    
+ 6) Before the new page will show up on the website, you need to add it into 
+    the menu.  To do this, edit "htmlPage.ini" in the <library> sub-directory.  
+    Identify the line: [menu] and insert a line like this:
+      Page Name = newPage.php
+    where "Page Name" is teh entry you want to appear in the menu, and 
+    "newPage.php" is the name you gave the page you've created.
+    Make sure you've saved the new version of htmlPage.ini back to the <library> 
+    directory.
+
+ 7) Now edit "newPage.php" to display the content you wish.  Follow steps (1) to 
+    (3) to do this.
+
+ 8) Now check that everything displays as it should.
+
+ 9) When you're happy that everything is as it should be, update "updates.txt". 
+    The body of the file should mention the changes in this session (in this case, 
+    you created the site).  The author line should be changed to your name and 
+    contact details.  The very first line of the file might one day display on the 
+    website as a summary of the latest changes, so this should have today's date 
+    followed by a very brief summary of the latest update (e.g. "Page added").
+
+10) A final check that everything is displaying as it should, and you're done! 
+    Enjoy!
+
+-------------------
+--- End of file ---
+-------------------

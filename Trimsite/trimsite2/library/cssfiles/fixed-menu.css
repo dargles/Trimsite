@@ -1,0 +1,212 @@
+/**
+ * normal.css provides a basic website layout
+ *
+ * It uses the CSS3 idea of defined sections, and additionally defines 
+ * its own section, "container"
+ * 
+ * @author David Argles <d.argles@gmx.com>
+ * @version 29-12-2013, 16:55h
+ * @copyright 2013 Haven Consulting
+ */
+
+/**
+ * The following section defines attributes that apply to all widths of screen display
+ */
+body
+{
+  font-family:verdana,arial,sans-serif;
+  background-color:#cc9;
+  color:white;
+}
+main
+{
+  display:block;
+  max-width:850px;
+  min-width:300px;
+  /* min-height:100%; */
+  margin:0 auto;
+  background-image:url('../graphics/fire-fox.jpeg');
+  border-radius:10px 10px 10px 10px;
+  box-shadow: 	0px 10px 20px rgba(0,0,0,0.6);
+}
+header
+{
+  color:white;
+  margin-bottom:0;
+  margin-top:37px;
+  padding:5px 0 5px 0px;
+  border-radius:10px 10px 0px 0px;
+  text-align:left;
+  background-color:rgba(0,00,00,0.5);
+}
+header h3{font-size:2em;padding:0px;margin:0.2em 10px 0 110px;}
+header p{font-size:1em;font-style:italic;padding:2px 0 5px 0px;margin:0 0 0 120px;}
+header img
+{
+  height:30px;
+  position:fixed;
+  top:0px;
+  margin:0px 0px 0 0px;
+  padding:0px 440px 2px 20px;
+  background-color:black;
+  border-radius:0px 0px 10px 10px;
+  box-shadow:0px 10px 20px 0px rgba(255,255,255,0.6);
+}
+banner
+{
+  display:block;
+  background-image:url('../graphics/banner.jpeg');
+  height:0px;
+}
+nav
+{
+  margin-right:0;
+  position:fixed;
+  top:00px;
+  margin-right:auto;
+  /*background-color:black;*/
+  text-align:center;
+  border-radius:0px 0px 10px 10px;
+  /*box-shadow:0px 10px 20px 0px rgba(255,255,255,0.6);*/
+  /*background-image:url('../graphics/banner.jpeg');*/
+}
+nav a
+{
+  display:block;
+  float:left;
+  background-color:black;
+  color:white;
+  padding:0.35em 1em 0 0em;
+  text-align:center;
+  /*border-radius:10px 10px 10px 10px;*/
+}
+nav a:hover{color:#ccc;}
+nav a.current{color:gray;}
+nav a:link, a:visited{text-decoration:none;}
+
+section
+{
+  background-color:white;
+  background-color:rgba(00,00,00,0.5);
+  padding:10px 0 10px 0px;
+}
+section h3{padding-left:0px;}
+section p{padding:0 10px 0 10px;}
+section p.centre{text-align:center}
+section table{padding-left:20px;font-style:italic;}
+section td.wide{width:15em;}
+section td.r-align{text-align:right;}
+section img{display:block; margin-left:auto; margin-right:auto;}
+section a
+{
+  color:#99f;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 1);
+}
+section div.centre{width:400px; margin-left:auto; margin-right:auto;}
+
+footer
+{
+  font-style:italic;
+  color:#999;
+  background-color:rgba(00,00,00,0.5);
+  padding:10px 10px 10px 0px;
+  border-radius:0px 0px 10px 10px;
+}
+/**
+ * The following section defines attributes specific to narrow screen widths
+ */
+@media screen and (max-width:480px)
+{
+    header h3{margin-left:10px;font-size:1.5em;}
+    header p{margin-left:20px;font-size:0.9em;}
+    header img{height:24px;padding-left:20px;padding-right:247px;}
+    /*header img{height:50px;float:left;margin:3px 10px 0 5px;}*/
+	/*nav
+	{
+	  background-color:#ccc;
+	  margin-top:0;
+      overflow:hidden;
+	  padding:0.6em 0.4em 0em 10px;
+      font-size:small;
+	}*/
+	nav
+	{
+	  /*margin-left:35px;
+	  padding-left:0px;*/
+	  min-width:300px;
+	  margin-left:0;
+	  padding-left:10px;
+      height:2em;
+      font-size:small;
+    }
+	nav a
+	{
+	  padding:0.2em;
+	  margin-right:0.2em;
+      padding-bottom:4px;
+	  /*border-width:0em;
+	  border-radius:5px 5px 0px 0px;*/  
+	}
+
+    section{padding:10px;}
+    section h3{font-size:1.1em;}
+    section {font-size:small;}
+    section img{width:280px;}
+    section table{font-size:small;}
+    footer {margin-left:10px;font-size:small;}
+}
+/**
+ * The following section defines attributes specific to intermediate widths
+ */
+@media screen and (min-width:481px) and (max-width:600px)
+{
+    header h3{margin-left:10px;}
+    header p{margin-left:20px;}
+    header img{padding-left:13px;padding-right:380px}
+    /*header img{height:50px;float:left;margin:8px 10px 0 5px;}*/
+	nav
+	{
+	  margin-left:50px;
+	  padding-left:10px;
+      height:2em;
+	}
+
+	section
+	{
+	  padding:20px 10px 20px 10px;
+	}
+	footer
+	{
+	  margin-left:10px;
+	  border-radius:0px 0px 10px 0px;
+	}
+}
+/**
+ * The following section defines attributes specific to wider screen widths
+ */
+@media screen and (min-width:601px)
+{
+    /*header img{margin-right:20px;}*/
+	nav
+	{
+	  margin-left:60px;
+      height:2em;
+      padding-left:50px;
+      width:100%;
+      border-radius:10px 10px 10px 10px;
+	}
+
+	section
+	{
+	  padding:20px 120px 20px 110px;
+	}
+	footer
+	{
+	  padding-left:110px;
+	  border-radius:0px 0px 10px 10px;
+	}
+}
+/**---------------------------------------------
+ *             End of Code
+ *----------------------------------------------
+ */

@@ -1,0 +1,40 @@
+Outstanding issues:
+* 404 handling (see 12/12/13 23:19)
+* Set up email lists (see 12/12/13 23:19)
+* Add a forum (see 12/12/13 23:19)
+* Weather widget(s) (see 12/12/13 23:19)
+* Tabbed sub-pages (see 14/12/13 22:08)
+******************************************************************************************
+* Filename:      comments.txt
+* Author:        David Argles (daargles@gmail.com)
+* Time/Date:     As below
+* Purpose:       Basically, this is intended as a "ToDo" file, but I'd like to record 
+*                other thoughts (e.g. "not too bothered about legacy browsers") as well.
+******************************************************************************************
+
+Theme:     Various
+Date/time: 14/12/13 22:08
+Author:    David
+
+* It might be nice to set up tabbed sub-pages under "Sailing" containing things like "forecast", "tides" and "events".  The "Membership" section could contain tabs that include "for sale", for example. And members' reports.
+
+Action: 
++++
+Theme:     Various
+Date/time: 12/12/13 23:19
+Author:    David
+
+The following is a starting list of things that I reckon need doing at the moment:
+
+* Documentation!
+* 404 handling
+* Check that error messages are switched off again (I switched them on when trying to work out why the site wasn't working on www.host-ed.me).
+* Add a weather widget (see: http://www.windfinder.com/) code: [<div style="font-size:1.0em;"><script type="text/javascript" language="JavaScript" src="http://www.windfinder.com/wind-cgi/homepageforecast.pl?STATIONSNR=gb212&UNIT_WIND=kts&UNIT_TEMPERATURE=c&VERSION=2&UNIT_WAVE=m&UNIT_RAIN=mm&NUM_COLS=1&NUM_DAYS=0&SHOW_DAY=1&LANG=en"></script><noscript><a href='http://www.windfinder.com/forecast/calshot?utm_source=forecast&utm_medium=web&utm_campaign=homepageweather&utm_content=noscript-forecast'>Wind forecast for Calshot</a> provided by <a href='http://www.windfinder.com?utm_source=forecast&utm_medium=web&utm_campaign=homepageweather&utm_content=noscript-logo'>windfinder.com</a></noscript></div>]
+* Set up email lists
+* Add a forum
+
+Action: (15.12.2013@01:15h) Initial documentation completed.
+Action: (15.12.2013@01:16h) Error messages are swithced off. 
++++
+end of file
++++
