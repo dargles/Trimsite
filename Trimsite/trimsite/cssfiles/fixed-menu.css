@@ -1,0 +1,207 @@
+/**
+ * fixed-menu.css provides a layout with a fixed menu at the top of the screen.
+ *
+ * It uses the CSS3 idea of defined sections.
+ * 
+ * @author David Argles <d.argles@gmx.com>
+ * @version 21-09-2016, 22:14h
+ * @copyright 2016 Haven Consulting
+ */
+
+/**
+ * We're using CSS3.  It's not supported by older browsers, so we need to 
+ * add the following to ensure compatibility.  Note: legacy IE is dealt 
+ * with in the HTML header via html5shiv.js
+ */
+main, header, banner, section, footer, aside, nav, article, figure {display:block;}
+
+/**
+ * ------------------------------------------------------------------------------------
+ * The following section defines attributes that apply to all widths of screen display.
+ * It's the only section that will be actioned by earlier IE browsers - all the 
+ * subsequent @media sections will be ignored.
+ * ------------------------------------------------------------------------------------
+ */
+
+/* body defines the entire area within the browser */
+body
+{
+  font-family:verdana,arial,sans-serif;
+  background-color:#cc9;
+  color:white;
+}
+
+/* main is the container for our site */
+main
+{
+  max-width:850px;
+  min-width:300px;
+  margin:0 auto;
+  background-image:url('../graphics/fire-fox.jpeg');
+  border-radius:10px 10px 10px 10px;
+  box-shadow: 	0px 10px 20px rgba(0,0,0,0.6);
+}
+
+/* header defines the area at the top of our content area.  It contains the page 
+ * title and the page subtitle (or "tagline").
+ */
+header
+{
+  color:white;
+  margin-bottom:0;
+  margin-top:37px;
+  padding:5px 100px 5px 100px;
+  border-radius:10px 10px 0px 0px;
+  text-align:left;
+  background-color:rgba(0,00,00,0.5);
+}
+header h3{font-size:2em;padding:0px;margin:0.2em 0px 0 10px;}
+header p{font-size:1em;font-style:italic;padding:2px 0 5px 0px;margin:0 0 0 20px;}
+header img
+{
+  height:30px;
+  position:fixed;
+  top:0px;
+  margin:0px 0px 0 -100px;
+  padding:0px 440px 2px 20px;
+  background-color:black;
+  border-radius:0px 0px 10px 10px;
+  box-shadow:0px 10px 20px 0px rgba(255,255,255,0.6);
+}
+header figure{height:0px;}
+
+/* nav is the navigation bar.  nav itself and the menu links are redefined in 
+ * the @media sections for the various screen widths; here we define the basics.
+ */
+nav
+{
+  margin-right:0;
+  position:fixed;
+  top:00px;
+  margin-right:auto;
+  padding-left:80px;
+  text-align:center;
+  border-radius:0px 0px 10px 10px;
+}
+/* The inner nav needs to not inherit the outer nav's left padding or margin 
+nav nav{padding-left:0px;margin-left:0px;} */
+/* a#menu is the menu icon. It needs to be hidden at normal widths */
+nav img{display:none;}
+nav a
+{
+  display:block;
+  float:left;
+  background-color:black;
+  color:white;
+  padding:0.35em 1em 0 0em;
+  text-align:center;
+}
+nav a:hover{color:#ccc;}
+nav a.current{color:gray;}
+nav a:link, a:visited{text-decoration:none;}
+
+section{background-color:rgba(00,00,00,0.5);padding:10px 100px 10px 100px;}
+section h3{padding:0 10px 0 10px;}
+section p{padding:0 20px 0 20px;}
+section p.centre{text-align:center}
+section table{padding-left:20px;font-style:italic;}
+section td.wide{width:15em;}
+section td.r-align{text-align:right;}
+section img{display:block; margin-left:auto; margin-right:auto;}
+section a
+{
+  color:#99f;
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 1);
+}
+section div.centre{width:400px; margin-left:auto; margin-right:auto;}
+section pre{overflow:scroll;padding:20px;}
+
+footer
+{
+  font-style:italic;
+  color:#999;
+  background-color:rgba(00,00,00,0.5);
+  padding:10px 110px 10px 110px;
+  border-radius:0px 0px 10px 10px;
+}
+
+/**
+ * The following section defines attributes specific to narrow screen widths
+ */
+@media screen and (max-width:480px)
+{
+    header{padding:5px 0px 5px 0px;}
+    header h3{margin-left:10px;font-size:1.5em;}
+    header p{margin-left:20px;font-size:0.9em;}
+    header img{height:24px;padding-left:0px;padding-right:247px;margin-left:0px;}
+    nav
+    {
+      min-width:300px;
+      margin-left:20px;
+      padding-left:10px;
+      height:2em;
+      font-size:small;
+    }
+    nav a
+    {
+      padding:0.2em;
+      margin-right:0.2em;
+      padding-bottom:4px;
+    }
+
+    section{padding:0px;}
+    section h3{font-size:1.1em;}
+    section {font-size:small;}
+    section img{width:280px;}
+    section table{font-size:small;}
+    footer {padding:10px;font-size:small;}
+}
+
+/**
+ * The following section defines attributes specific to intermediate widths
+ */
+@media screen and (min-width:481px) and (max-width:600px)
+{
+    header{padding:5px 0px 5px 0px;}
+    header h3{margin-left:10px;}
+    header p{margin-left:20px;}
+    header img{padding-left:13px;padding-right:380px;margin-left:0px;}
+    nav
+    {
+      margin-left:50px;
+      padding-left:10px;
+      height:2em;
+    }
+
+    section{padding:20px 0px 20px 0px;}
+    footer
+    {
+      border-radius:0px 0px 10px 10px;
+      padding:10px 10px 10px 10px;
+    }
+}
+
+/**
+ * The following section defines attributes specific to wider screen widths
+ */
+@media screen and (min-width:601px)
+{
+  nav
+  {
+    margin-left:60px;
+    height:2em;
+    padding-left:50px;
+    width:auto;
+    border-radius:10px 10px 10px 10px;
+  }
+
+  footer
+  {
+    padding-left:110px;
+    border-radius:0px 0px 10px 10px;
+  }
+}
+/**---------------------------------------------
+ *             End of Code
+ *----------------------------------------------
+ */

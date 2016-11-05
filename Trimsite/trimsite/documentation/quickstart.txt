@@ -1,0 +1,91 @@
+*********************************************************************************
+* Filename:     quickstart.txt                                                  *
+* Version:      11.09.2015, 22:23hr                                             *
+* Author:       David Argles, daargles@gmail.com                                *
+* Description:  This file gives instructions for how to set up a simple site    *
+*               starting with the Trimsite package.  The fancy stuff can be     *
+*               found in "howto.txt"                                            *
+*********************************************************************************
+
+The Trimsite package comes as a working website with three (simple) sample pages. 
+That means that, if you wish, you can port the entire package into your webspace 
+and then edit it to make it present the content you want in the way that you 
+want, changing things a step at a time.  Alternatively, you can copy the entire 
+contents of the <trimsite> directory into your webspace and then create your own 
+pages from scratch.
+
+ 1) You will need one "pagename.php" file for each webpage that will be 
+    displayed.  Either work with the existing pages (index.php, readme.php 
+    and contact.php) and/or make the relevant number of copies of 
+    examplePage.php from the <trimsite> directory.  It would be a good idea to 
+    select meaningful names for these pages - you probably won't want a 
+    readme.php, but you probably will want other pages instead.
+
+ 2) You will need a decent text editor to update the content of the various 
+    site files.  Either do this in Linux, or if you must use Windoze, use 
+    something decent like Notepad++.  Do NOT use the standard Microsoft editors, 
+    they don't work properly and they will just mess everything up.
+
+ 3) Once you've ceated the various pages for your site, it would be a good idea 
+    to edit "webpage.ini" in the <trimsite> directory.  For now, the most 
+    important entries to change are "heading" and "tagline" - these affect the 
+    heading at the top of every page.  You will also need to update the "[menu]" 
+    entry.  This consists of a number of lines, one for each page of your 
+    website.  The name on the left appears in the menu bar as the link text.  
+    The page on the right (e.g. "index.php") is the page it will link to.  It's 
+    probably a good idea to stick to one word entries in the menu (otherwise it 
+    can be confusing for your users), but if you should need multiple words, 
+    use quotes.
+    
+ 4) Once you're happy with the entries in "webpage.ini", start to edit the 
+    content of your various web pages.  You will see that the only HTML 
+    that each page contains is in the middle - this is what you edit (or create).  
+    There are some basic rules:
+    - Paragraphs should normally be given simply as <p></p>.  Don't mess about 
+      with any style changes - let the CSS handle everything, it's set up to make 
+      sure that the page content displays correctly at all widths and on all 
+      devices.
+    - Similarly, headers should normally be given as <h3></h3>.  Again, don't 
+      cheat - let the CSS do its work!
+    - Images go in as <img src="whatever.jpg" alt="[Text alternative]" /> or 
+      whatever; the same rationale applies.
+      
+ 5) When you've made a change, you really ought to:
+    - update the @version line towards the top of the file; and
+    - update the updates.txt file in the <trimsite/documentation> directory.
+    It's important to make a note of the changes you make and when you made them.
+
+If you want to add another page to your site:
+
+ 6) Open the <trimsite> directory and *copy!* "examplePage.php" into the main web  
+    folder.  Make sure you copy this file rather than moving it!  
+    
+ 7) Rename the file to be whatever you want to call it - but it *must* end in 
+    ".php".
+    
+ 8) Before the new page will show up on the website, you need to add it into 
+    the menu.  To do this, edit "webpage.ini" in the <trimsite> sub-directory.  
+    Identify the line: [menu] and insert a line like this:
+      Pagename = newPage.php
+    where "Pagename" is the entry you want to appear in the menu, and 
+    "newPage.php" is the name you gave the page you've created.
+    Make sure you've saved the updated version of webpage.ini back to the 
+    <trimsite> directory.
+
+ 9) Now edit "newPage.php" to display the content you wish, as in steps (4) and 
+    (5).
+
+10) Now check that everything in your site is displaying as you wish.
+
+11) When you're happy that everything is as it should be, update "updates.txt". 
+    The body of the file should mention the changes in this session (in this case, 
+    you created the site).  The author line should be changed to your name and 
+    contact details.
+
+12) A final check that everything is looking good, and you're done!
+ 
+Enjoy!
+
+-------------------
+--- End of file ---
+-------------------

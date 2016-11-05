@@ -1,6 +1,6 @@
 <?php
 /**
- * index.php is the home page for our website
+ * examplePage.php is the example page for our website
  *
  * It instantiates our class, webpage, and calls the method that returns the initial 
  * html for the top of our page.  The main centre section of this file makes space to 
@@ -8,7 +8,7 @@
  * of our boilerplate code.
  * 
  * @author David Argles <d.argles@gmx.com>
- * @version 22-09-2016, 17:53h
+ * @version 21-09-2016, 17:31h
  * @copyright 2016 Haven Consulting
  */
 
@@ -16,28 +16,17 @@
      Don't change these lines! */
   include("trimsite/webpage.class.php");
   $template = new webpage();
-
+ 
   /* Now we can stream our initial template code */
-  echo ($template->render("TOP"));
+  echo $template->render("TOP");
 ?>
         <!-- The main page content follows.  You can change this as you wish -->
       
-        <h3>TrimSite</h3>
-        <p>This is the delivery version of TrimSite.  To set it up, see:</p>
-        <ul>
-          <li>
-            the <a href="readme.php">readme file</a>,
-          </li>
-          <li>
-            the <a href="http://argles.org/trimsite/">TrimSite website</a>,
-          </li>
-          <li>
-            the <a href="library/documentation/">documentation folder</a>,
-          </li>
-          <li>
-            and the internal code documentation in each file.
-          </li>
-        </ul>
+        <h3>Example Page</h3>
+
+        <p>This is the example page for TrimSite.  Copy it into your website's root directory and rename it as appropriate for the page you want to create.</p>
+
+        <p>When creating a standard page, try and stick to using &lt;h3&gt; for headings (&lt;h1&gt; is used for the page title and &lt;h2&gt; for the sub-title), and a simple &lt;p&gt; for paragraphs.  The CSS file will sort out the layout for various devices, and introducing unexpected styling may mess this up.</p>
 
         <p>As delivered, Trimsite should be HTML5 and CSS3 compliant.  You are encouraged to stick to those standards; it's not a bad idea to test your pages in the W3 <a href="http://validator.w3.org/">HTML5</a> and <a href="http://jigsaw.w3.org/css-validator/">CSS3</a> validators as you go.</p>
 

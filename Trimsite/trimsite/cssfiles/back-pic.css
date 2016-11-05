@@ -1,0 +1,179 @@
+/**
+ * back-pic.css provides a layout based on a background picture and a slightly 
+ * translucent foreground.
+ *
+ * It uses the CSS3 idea of defined sections
+ * 
+ * @author David Argles <d.argles@gmx.com>
+ * @version 21-09-2016, 22:12h
+ * @copyright 2016 Haven Consulting
+ */
+
+/**
+ * We're using CSS3.  It's not supported by older browsers, so we need to 
+ * add the following to ensure compatibility.  Note: legacy IE is dealt 
+ * with in the HTML header via html5shiv.js
+ */
+main, header, banner, section, footer, aside, nav, article, figure {display:block;}
+
+/**
+ * ------------------------------------------------------------------------------------
+ * The following section defines attributes that apply to all widths of screen display.
+ * It's the only section that will be actioned by earlier IE browsers - all the 
+ * subsequent @media sections will be ignored.
+ * ------------------------------------------------------------------------------------
+ */
+
+/* body defines the entire area within the browser */
+body
+{
+  font-family:verdana,arial,sans-serif;
+  background-image:url('../graphics/desert-island.jpeg');
+  background-size:100%; /*cover;*/
+}
+
+/* main is the container for our site */
+main
+{
+  display:block;
+  max-width:790px;
+  min-width:300px;
+  margin:0 auto;
+  opacity:0.8;
+}
+
+/* header defines the area above the nav bar.  It contains the page title, the 
+ * page subtitle (or "tagline"), and the site logo.
+ */
+header
+{
+  color:white;
+  margin-bottom:0;
+  padding:5px 0 5px 0px;
+  border-radius:10px 10px 0px 0px;
+  text-align:left;
+  background-color:rgba(255,0,0,0);
+}
+header h3{font-size:2em;padding:0px;margin:0.2em 10px 0 80px;}
+header p{font-size:1em;font-style:italic;padding:2px 0 5px 0px;margin:0 0 0 90px;}
+header img{height:50px;float:left;margin:8px 10px 0 0px;}
+header figure{height:0px;}
+
+/* nav is the navigation bar.  nav itself and the menu links are redefined in 
+ * the @media sections for the various screen widths; here we define the basics.
+ */
+nav 
+{
+  margin:0 auto;
+  background-color:black;
+  text-align:center;
+  height:2em;
+  padding-left:80px;
+  border-radius:10px 10px 10px 10px;
+}
+/* The inner nav needs to not inherit the outer nav's left padding */
+nav nav{padding-left:0px;}
+/* a#menu is the menu icon. It needs to be hidden at normal widths */
+nav img{display:none;}
+nav a
+{
+  display:block;
+  float:left;
+  background-color:black;
+  color:white;
+  padding:0.35em 1em 0 0em;
+  text-align:center;
+}
+nav a:hover{color:#ccc;}
+nav a.current{color:gray;}
+nav a:link, a:visited{text-decoration:none;}
+
+section
+{
+  margin-top:20px;
+  background-color:white;
+  padding:10px 70px 10px 70px;
+  border-radius:10px 10px 0px 0px;
+  box-shadow:0px 10px 20px rgba(0,0,0,0.6);
+}
+section h3{padding-left:10px;}  
+section p{padding:0 20px 0 20px;}
+section p.centre{text-align:center}
+section ol li{padding:0.5em 0 0.5em 0;}
+section table{margin-left:auto; margin-right:auto; font-style:italic;}
+section td{margin:0;border-width:1px 0 0px 0;border-style:solid;}
+section td{padding-right:5px;}
+section td.wide{width:15em;}
+section td.r-align{text-align:right;}
+section img{display:block; max-width:400px; margin-left:auto; margin-right:auto;}
+section pre{overflow:scroll;padding:20px;}
+
+footer
+{
+  font-style:italic;
+  color:gray;
+  background-color:white;
+  padding:10px 80px 10px 80px;
+  border-radius:0px 0px 10px 10px;
+}
+
+/**
+ * The following section defines attributes specific to narrow screen widths
+ */
+@media screen and (max-width:480px)
+{
+    body{font-size:small;}
+    header h3{margin-left:75px;font-size:1.9em;}
+    header p{margin-left:85px;font-size:1.1em;}
+    header img{margin:3px 10px 0 5px;}
+    nav
+    {
+      background-color:#ccc;
+      margin-top:0;
+      overflow:hidden;
+      padding:0.4em 0.4em 0px 10px;
+      border-radius:10px 10px 0px 0px;
+    }
+    nav a
+    {
+      background-color:#aaa;
+      padding:0.3em 0.3em 4px 0.3em;
+      margin-right:0.2em;
+      border-width:0;
+      border-radius:5px 5px 0px 0px;  
+    }
+    nav a:hover{color:#ccc;}
+    nav a.current{background-color:white;}
+    section{margin-top:-3px;padding:4px 0 10px 0;border-radius:0px 0px 0px 0px;}
+    section h3{font-size:1.1em;}
+    section img{width:280px;}
+    footer {padding-left:10px;}
+}
+
+/**
+ * The following section defines attributes specific to intermediate widths
+ */
+@media screen and (min-width:481px) and (max-width:600px)
+{
+    header h3{margin-left:75px;}
+    header p{margin-left:85px;}
+	nav{padding-left:10px;}
+	section{padding:10px 0px 20px 0px;}
+	section img{margin-left:auto; margin-right:auto;}
+	footer{padding-left:10px;}
+}
+
+/**
+ * ------------------------------------------------------------------------------------
+ * The following section defines attributes specific to wider screen widths.
+ * ------------------------------------------------------------------------------------
+ */
+@media screen and (min-width:601px)
+{
+  /* Note: This section is here to deal with anything specific to widths greater than
+   *       600px.  But in this instance, it's all dealt with by the main section. */
+}
+/**---------------------------------------------
+ *             End of Code
+ *----------------------------------------------
+ */

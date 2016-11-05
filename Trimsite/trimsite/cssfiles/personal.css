@@ -1,0 +1,264 @@
+/**
+ * personal.css aims to get a modern layout
+ *
+ * It uses the CSS3 idea of defined sections.  "main" is used as a container
+ * element for the entire page.
+ * 
+ * @author David Argles <d.argles@gmx.com>
+ * @version 09-02-2016, 17:33h
+ * @copyright 2016 Haven Consulting
+ */
+
+/**
+ * We're using CSS3.  It's not supported by older browsers, so we need to 
+ * add the following to ensure compatibility.  Note: legacy IE is dealt 
+ * with in the HTML header via html5shiv.js
+ */
+main, header, banner, section, footer, aside, nav, article, figure {display:block;}
+
+/**
+ * ------------------------------------------------------------------------------------
+ * The following section defines attributes that apply to all widths of screen display.
+ * It's the only section that will be actioned by earlier IE browsers - all the 
+ * subsequent @media sections will be ignored.
+ * ------------------------------------------------------------------------------------
+ */
+
+/* body defines the entire area within the browser */
+body
+{
+  font-family:verdana,arial,sans-serif;
+  color:black;
+  background-color:#cc9;
+  margin:8px;
+}
+body a{text-decoration:none;}
+
+/* main is the container for our site */
+main
+{
+  display:flex;
+  flex-direction:column;
+  max-width:850px;
+  min-width:280px;
+  margin:0 auto;
+  background-color:white;
+  border-radius:0;
+  box-shadow: 	0px 10px 20px rgba(0,0,0,0.6);
+}
+
+/* nav is the navigation bar.  nav itself and the menu links are redefined in 
+ * the @media sections for the various screen widths; here we define the basics.
+ */
+nav
+{  
+  /*position:absolute;
+  top:8px;
+  width:inherit;
+  margin:0 8px 0 0;*/
+  order:-1;
+  background-color:brown;
+  height:29px; /* height:2em; */
+  padding-left:100px;
+}
+/* nav img is assumed to be the menu icon that only appears at narrow 
+ * widths (mobiles) */
+nav img{display:none;}
+
+/* -----------------------------------------------------------------------------
+ * nav a defines the main menu.  This is visible when the menu icon isn't
+ */
+nav a /* The menu items */
+{
+  float:left;
+  text-decoration:none;
+  color:white;
+  padding:6px 16px 0 0em;
+  width:80px;
+}
+nav a.current{color:#ccc;} /* Current page is greyed out */
+nav a:hover{color:#eee;} /* Grays just a little when hovering over the link */
+
+nav a#menu{display:none;}
+nav a
+{
+  text-decoration:none;
+  color:white;
+  padding:6px 0px 0px 16px;
+}
+nav a.current{color:#000;}
+nav a:hover{color:#ccc;}
+
+/*----------------------------------------------------------------------------*/
+/* header defines the area below the nav bar.  It contains the page title, the 
+ * page subtitle (or "tagline"), the site logo, and "figure" - the banner graphic.
+ */
+header
+{
+  background-image:url('../graphics/Backdrop-forest.jpg');
+  margin:0px 0 0 0;
+  height:220px;
+  padding:5px 0 0px 0px;
+  text-align:left;
+  color:brown;
+  text-shadow: 2px 2px 5px black;
+}
+header h3{color:#ff0;font-size:2em;text-align:right;margin:0;padding:15px 100px 0 0px;}
+header p{color:#ff0;font-size:1em;font-style:italic;font-weight:bold;text-align:right;margin:0;padding:120px 100px 0 0px;}
+header img{float:left;height:200px;width:200px;border-radius:200px;margin:70px 0 10px 100px;border-width:1px;border:solid;position:relative;}
+
+
+/* section defines the main content area */
+section
+{
+  clear:both;
+  background-color:white; /* Don't think this is necessary */
+  padding:3em 100px 10px 100px;
+}
+section h3{padding-left:10px;}
+section p{padding:0 10px 0 20px;}
+section p.centre{text-align:center}
+section table{margin-left:auto; margin-right:auto;font-style:italic;border-collapse:collapse;}
+section tr{border-style:solid;border-width:1px 0 1px 0}
+section td.wide{width:15em;}
+section td.r-align{text-align:right;}
+section img{display:block; margin-left:auto; margin-right:auto;}
+section img.right{float:right; height:120px; width:auto;margin:0 10px 0 10px;}
+section img.left{float:left; height:120px; width:auto;margin:0 10px 0 20px;}
+section pre{overflow:scroll;padding:20px;}
+section ul{padding-right:40px;}
+
+/* footer defines the bottom of the page */
+footer
+{
+  font-style:italic;
+  font-size:small;
+  color:gray;
+  background-color:white; /* Don't think this is necessary */
+  padding:10px 100px 10px 100px;
+  border-radius:0px 0px 10px 10px;
+}
+footer p{padding:0 10px 0 10px;}
+
+.left{float:left;}
+
+/**
+ * ------------------------------------------------------------------------------------
+ * The following section applies to ALL screen widths.  It's here to undo any IE 
+ * quirks inserted in the section above.
+ * ------------------------------------------------------------------------------------
+ */
+@media screen
+{
+  /* Note: If we design our template correctly, we can avoid having to undo IE quirks.
+   *       One principle is to use padding rather than margin - it avoids browsers
+   *       interpreting them differently ;-) */
+}
+
+/**
+ * ------------------------------------------------------------------------------------
+ * The following section defines attributes specific to narrow screen widths.  In 2016, 
+ * this applies mainly to mobile phones in portrait mode.
+ * ------------------------------------------------------------------------------------
+ */
+@media screen and (max-width:580px)
+{
+  /* We haven't a lot of room.  So the first job is to reduce the font size */
+  body{font-size:small;}
+
+  /*---------------------------------------------------------------------------
+   * Sort out the change in menu layout */
+   
+  /* Set a small left margin */
+  nav{margin:0;padding-left:10px;padding-top:2px;height:25px;}
+  
+  /* Swap over to the menu icon */
+  nav img, a#menu
+  {
+    display:inline;
+    float:left;
+    margin-left:0;
+    padding-top:0;
+    border:none;
+  }
+ 
+  /* Now format up the primary menu entries */
+  nav a
+  {
+    display:none;
+    float:none;
+    position:relative;
+    padding:5px 10px 5px 10px;
+    margin-left:40px;
+    width:60px;
+    height:auto;
+    background-color:white;
+    border:solid black;
+    border-width:0 2px 0 2px;
+    color:black;
+  }
+  nav:hover > a{display:block;}
+  nav a:hover{color:blue;}
+  nav a:first-of-type {border-width:2px 2px 0px 2px;border-radius:5px 5px 0 0;}
+  nav a:last-of-type {border-width:0 2px 2px 2px;border-radius:0 0 5px 5px;}
+
+  /*--------------------------------------------------------------------------*/
+
+  header{height:160px;}
+  header h3{padding-right:10px;}
+  header p{padding:60px 10px 0 0px;}
+  header img{float:left;height:100px;width:100px;border-radius:100px;margin:65px 0 0 10px;}
+
+  /* This bit just tinkers with the padding a little bit to maximise the usage of 
+   * the available space */
+  section{padding:1em 0 10px 0;}
+  section h3{font-size:1.1em;}
+  section img{width:280px;}
+  footer {padding:10px 0 10px 0;}
+}
+
+/**
+ * ------------------------------------------------------------------------------------
+ * The following section defines attributes specific to intermediate widths.  This will 
+ * tend to apply to mobile phones in landscape mode, for example.
+ * ------------------------------------------------------------------------------------
+ */
+@media screen and (min-width:581px) and (max-width:749px)
+{
+  /* For intermediate widths, we reduce the side margins to 0 (we can allow the h3 and 
+   * p styles to give us the necessary indents) */
+  nav{padding-left:0px;}
+  nav img{padding-left:0px;}
+  header h3{padding-right:10px;}
+  header p{padding:120px 10px 0 0px;}
+  header img{margin:85px 0 0 10px;height:150px;width:150px;border-radius:150px;}
+  section{padding:10px 0 10px 0;}
+  footer{padding:10px 0 10px 0;}
+}
+
+/**
+ * ------------------------------------------------------------------------------------
+ * The following section defines attributes specific to wider screen widths.
+ * ------------------------------------------------------------------------------------
+ */
+@media screen and (min-width:750px)
+{
+  /* Note: This section is here to deal with anything specific to widths greater than
+   *       840px */
+  section pre{overflow:visible;padding-right:0px;}
+}
+
+/**
+ * ------------------------------------------------------------------------------------
+ * The following section defines any changes of layout required for the printer.  This 
+ * might include dropping out the banner graphic, for example.
+ * ------------------------------------------------------------------------------------
+ */
+@media print
+{
+  header figure{background-image:none;}
+}
+/**---------------------------------------------
+ *             End of Code
+ *----------------------------------------------
+ */

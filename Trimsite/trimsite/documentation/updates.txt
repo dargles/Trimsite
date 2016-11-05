@@ -1,0 +1,98 @@
+******************************************************************************************
+* Filename:	updates.txt
+* Author:       David Argles (daargles@gmail.com)
+* Time/Date:    As below
+* Purpose:      To record updates to site files
+******************************************************************************************
+
+Time: 	11-09-15, 22:40h
+Coder:	David
+Notes:
+a tidy-up for trimsite3:
+* Mainly updated the documentation to reflect the changes; and 
+* One or two small changes elsewhere that I'd missed.
+
+--- end of update ---
+
+Time: 	11-09-15, 16:09h
+Coder:	David
+Notes:
+Major update from trimsite2 to trimsite3:
+* Renamed <library> to become <trimsite>, and altered all references to this directory to 
+  match.
+* Renamed webpage.php to webpage.class.php (as it's a class definition file), and altered 
+  all references to it to match.
+* Joined templateTop.html and templateBottom.html to create a single template.html, and 
+  altered the webpage render method appropriately.
+* Extracted the menu html form the webpage render method to create two partials, menu.php 
+  and menuCurrent.php and altered the webpage render method appropriately.
+
+--- end of update ---
+
+Time: 	14-02-15, 09:46h
+Coder:	David
+Notes:
+* Made 3 minor changes to partials.php to make it backwards compatible with older versions 
+  of PHP; two places where it now uses array() instead of [], and one place where there is 
+  an unnecessary use of the new third parameter in strstr().
+
+--- end of update ---
+
+Time: 	06-01-15, 14:15h
+Coder:	David
+Notes:
+* side-menu.css and fixed-menu.css now sorted.  They exhibit "graceful degradation" in IE; 
+  IE9,10 & 11 work pretty well.  Then IE8 down through to IE5 get progressively worse, 
+  although there is still a reasonable and working display even in IE5.
+
+--- end of update ---
+
+Time: 	04-01-15, 23:42h
+Coder:	David
+Notes:
+* I've now reworked back-pic.css so it's properly cross-browser compatible, including 
+  IE5.  I've also removed redundant multiple declarations.  There is a very slight glitch 
+  remaining in IE11, but life is too short...
+
+Note: side-menu.css and fixed-menu.css still need cleaning up and making IE5 compatible.
+
+--- end of update ---
+
+Time: 	04-01-15, 16:28h
+Coder:	David
+Notes:
+* Using <banner> may work, but it fails to validate in the W3 Validator.  So I've:
+  - changed from <banner> to <figure>,  
+  - put <figure> inside <header>, and
+  - updated trimsite2.css to reflect this.
+  Putting <figure> inside <header> means it can be specified as "header figure" in the 
+  CSS, so it's not necessary to declare a specific class of figure for the banner.
+  ...But I'd really rather have <banner> - it's then clear what we're doing... :-(
+
+--- end of update ---
+
+Time: 	24-12-14, 14:17h
+Coder:	David
+Notes:
+* Upgraded to Trimsite2
+* Sorted out the initial documentation
+
+--- end of update ---
+
+Time: 	15-12-13, 01:20h
+Coder:	David
+Notes:
+* Sorted out the initial documentation
+* Also have got my head around using Aptana for updating files, and
+* Git for committing changes.
+
+--- end of update ---
+
+Time: 	12-12-13, 23:35h
+Coder:	David
+Notes:
+* Site taken live on www.freehosting.com.  Tried hosting on www.host-ed.me, but it wouldn't allow php ini files :'(
+
+--- end of update ---
+
+--- end of update notes ---

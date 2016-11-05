@@ -1,0 +1,79 @@
+*********************************************************************************
+* Filename:     howto.txt                                                       *
+* Version:      11.09.2015, 22:26hr                                             *
+* Author:       David Argles, d.argles@gmx.com                                  *
+* Description:  This file gives explains how the example page works.  The       *
+*               basic stuff can be found in "quickstart.txt"                    *
+*********************************************************************************
+
+In this file, the assumption is that either you already know what you're doing, 
+or have already worked through the quickstart file.  The various aspects of the 
+example page will be explained.  It should be read in conjunction with the 
+content and comments of examplePage.php, and make sure you've read about the 
+design philosophy in readme.txt!
+
+ 1) The initial comment block:
+    --------------------------
+    The initial comment block follows the phpDoc standard.  If you want to play 
+    with this, it would be good to read up on how phpDoc works - have a look on 
+    the web for this.
+    
+    It would actually be an extremely good idea to update the @version line 
+    whenever you make any changes to give the current date and time.  Also, 
+    it would be helpful if you add your name to the @author line, together 
+    with your contact details.
+    
+ 2) "display_errors":
+    -----------------
+    There used to be a "display_errors" line in the PHP pages which is useful 
+    when testing out changes.  This has now been moved to the construct method 
+    in the webpage class definition (i.e. in webpage.class.php in the <trimsite> 
+    directory.  If you uncomment this line, any php errors will be reported in 
+    the web browser.  However, this is a potential security risk, so when you've 
+    sorted everything out and it's all running OK, make sure you comment this 
+    line out again!
+
+    The reason for moving this line from the individual pages to the __construct 
+    method is that it then only appears -once- ;-) making it easier to remove 
+    all instances when one has finished develolping.
+
+ 3) The class definition:
+    ---------------------
+    The boilerplate page template is defined in the webpage class file 
+    (webpage.class.php) in the <trimsite> directory.  This is brought in by the 
+    "include" line, and then activated by the "new webpage()" line.  Don't 
+    mess with these lines!
+ 
+ 4) $template->render("TOP"):
+    ---------------------------------
+    Next comes the invocation of the webpage render() method.  This streams 
+    all the necessary HTML code to produce the top half of the web page.  Again, 
+    don't alter this line.
+     
+ 5) Main page content:
+    ------------------
+    You should now put all your content in between here and the footer.  
+    
+    For straight-forward text, you only want two styles.  Sub-headings should 
+    use the <h3> style.  Main paragraphs should use the standard <p> style.  
+    Images use the standard <img src="" alt="" /> tag.  Let the CSS handle all the 
+    formatting!  The basic practicalities are covered in quickstart.txt.
+
+ 6) $template->render("BOTTOM"):
+    ------------------------------------
+    The final active line in examplePage.php again calls the render() method, this   
+    time to stream all the final HTML code to tidy up the HTML page, close some open 
+    HTML block elements, and to close the <body> and <html> tags, for example.  
+    Once again, don't change this.
+    
+That's it, for the moment at least.  Enjoy!
+
+Don't forget, the primary motivation for this approach is to make life easy, and 
+to make maintenance of the site as minimal as possible whilst also ensuring the 
+site as a whole is professional, accessible and useful.  If something becomes 
+tedious or long-winded, we're probably missing a trick somewhere.  Let's see if 
+we can fix it...
+
+-------------------
+--- End of file ---
+-------------------
