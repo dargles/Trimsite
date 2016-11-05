@@ -1,0 +1,244 @@
+/**
+ * trimsite3.css provides a basic website layout
+ *
+ * It uses the CSS3 idea of defined sections.  "main" is used as a container
+ * element for the entire page.
+ * 
+ * @author David Argles <d.argles@gmx.com>
+ * @version 21-09-2016, 19:54h
+ * @copyright 2016 Haven Consulting
+ */
+
+/**
+ * We're using CSS3.  It's not supported by older browsers, so we need to 
+ * add the following to ensure compatibility.  Note: legacy IE is dealt 
+ * with in the HTML header via html5shiv.js
+ */
+main, header, banner, section, footer, aside, nav, article, figure {display:block;}
+
+/**
+ * ------------------------------------------------------------------------------------
+ * The following section defines attributes that apply to all widths of screen display.
+ * It's the only section that will be actioned by earlier IE browsers - all the 
+ * subsequent @media sections will be ignored.
+ * ------------------------------------------------------------------------------------
+ */
+
+/* body defines the entire area within the browser */
+body
+{
+  font-family:verdana,arial,sans-serif;
+  color:black;
+  background-color:#cc9;
+}
+body a{text-decoration:none;}
+
+/* main is the container for our site */
+main
+{
+  max-width:850px;
+  min-width:300px;
+  margin:0 auto;
+  background-color:white;
+  border-radius:10px 10px 10px 10px;
+  box-shadow: 	0px 10px 20px rgba(0,0,0,0.6);
+}
+
+/* header defines the area above the nav bar.  It contains the page title, the 
+ * page subtitle (or "tagline"), the site logo, and "figure" - the banner graphic.
+ */
+header
+{
+  margin-bottom:0;
+  padding:5px 0 0px 0px;
+  border-radius:10px 10px 0px 0px;
+  text-align:left;
+}
+header h3{font-size:2em;padding:0px;margin:0.2em 10px 0 110px;}
+header p{font-size:1em;font-style:italic;padding:2px 0 5px 0px;margin:0 0 0 120px;}
+/* header img is the site logo.  It's expected to be 50px high by 65px wide */
+header img{height:50px;float:left;margin:8px 10px 0 30px;}
+/* The header figure comes last inside header.  It is entirely empty as far as HTML 
+ * content is concerned, but it allows us to display a graphic as a banner.
+ */
+header figure
+{
+  background-image:url('../graphics/banner-trimsite.png');
+  margin:0;
+  height:110px;
+}
+
+/* nav is the navigation bar.  nav itself and the menu links are redefined in 
+ * the @media sections for the various screen widths; here we define the basics.
+ */
+nav
+{  
+  margin:0 auto;
+  background-color:black;
+  height:1.5em; /* height:2em; */
+  padding:5px 0 0 110px;
+}
+nav img{display:none;}
+nav a
+{
+  text-decoration:none;
+  /* text-align:center; */
+  color:white;
+  padding:4px 16px 0 0;
+}
+nav a.current{color:gray;}
+nav a:hover{color:#ccc;}
+
+/* section defines the main content area */
+section
+{
+  background-color:white; /* Don't think this is necessary */
+  padding:10px 100px 10px 100px;
+}
+section h3{padding-left:10px;}
+section p{padding:0 10px 0 20px;}
+section p.centre{text-align:center}
+section table{margin-left:auto; margin-right:auto;font-style:italic;border-collapse:collapse;}
+section tr{border-style:solid;border-width:1px 0 1px 0}
+section td.wide{width:15em;}
+section td.r-align{text-align:right;}
+section img{display:block; margin-left:auto; margin-right:auto;}
+section img.right{float:right; height:120px; width:auto;margin:0 10px 0 10px;}
+section img.left{float:left; height:120px; width:auto;margin:0 10px 0 20px;}
+section pre{overflow:scroll;padding:20px;}
+
+/* footer defines the bottom of the page */
+footer
+{
+  font-style:italic;
+  font-size:small;
+  color:gray;
+  background-color:white; /* Don't think this is necessary */
+  padding:10px 100px 10px 100px;
+  border-radius:0px 0px 10px 10px;
+}
+footer p{padding:0 10px 0 10px;}
+
+/**
+ * ------------------------------------------------------------------------------------
+ * The following section applies to ALL screen widths.  It's here to undo any IE 
+ * quirks inserted in the section above.
+ * ------------------------------------------------------------------------------------
+ */
+@media screen
+{
+  /* Note: If we design our template correctly, we can avoid having to undo IE quirks.
+   *       One principle is to use padding rather than margin - it avoids browsers
+   *       interpreting them differently ;-) */
+}
+
+/**
+ * ------------------------------------------------------------------------------------
+ * The following section defines attributes specific to narrow screen widths.  In 2015, 
+ * this applies mainly to mobile phones in portrait mode.
+ * ------------------------------------------------------------------------------------
+ */
+@media screen and (max-width:480px)
+{
+  /* We haven't a lot of room.  So the first job is to reduce the size of the header 
+   * as much as we can */
+  body{font-size:small;}
+  header h3{margin-left:75px;font-size:1.8em;}
+  header p{margin-left:85px;font-size:1.1em;}
+  header img{height:50px;float:left;margin:3px 10px 0 5px;}
+
+  /* OK, we -could- have kept the nav bar styled similarly to the larger widths.  But 
+   * this started life as a demo, so we make a very noticeable change to the style, 
+   * right...?  Just to prove that this is truly responsive ;-) */
+  nav {padding:4px 0 4px 10px;}
+  nav img {display:inline;padding:0px 10px 0 0px;}
+  nav a 
+  {
+    display:none;
+    position:relative;
+    width:100px;
+    left:0px;
+    top:-20px;
+    background-color:transparent;
+  }
+  nav:hover a
+  {
+    display:block;
+  }
+  nav a
+  {
+    color:black;
+    padding:5px 20px 5px 20px;
+    background-color:#eee;
+    border:solid black;
+    border-width:0 2px 0 2px;
+  }
+  nav a:first-of-type
+  {
+    border-width:2px 2px 0px 2px;
+    border-radius:5px 5px 0px 0px;    
+  }
+  nav a:last-of-type
+  {
+    border-width:0 2px 2px 2px;
+    border-radius:0px 0px 5px 5px;    
+  }
+  nav a:hover{color:blue}
+  nav a.current{color:gray;}
+  p.clear{float:none;}
+
+  /* This bit just tinkers with the padding a little bit to maximise the usage of 
+   * the available space */
+  section{padding:10px 0 10px 0;}
+  section h3{font-size:1.1em;}
+  section img{width:280px;}
+  footer {padding:10px 0 10px 0;}
+}
+
+/**
+ * ------------------------------------------------------------------------------------
+ * The following section defines attributes specific to intermediate widths.  This will 
+ * tend to apply to mobile phones in landscape mode, for example.
+ * ------------------------------------------------------------------------------------
+ */
+@media screen and (min-width:481px) and (max-width:600px)
+{
+  /* For intermediate widths, we shunt the header over to the left a little more to 
+   * make a bit more room */
+  header h3{margin-left:75px;}
+  header p{margin-left:85px;}
+  header img{height:50px;float:left;margin:8px 10px 0 5px;}
+
+  /* We then then reduce the side margins to 0 (we can allow the h3 and p styles to 
+   * give us the necessary indents) */
+  nav{margin:0 auto;padding-left:10px;}
+  section{padding:10px 0 10px 0;}
+  footer{padding:10px 0 10px 0;}
+}
+
+/**
+ * ------------------------------------------------------------------------------------
+ * The following section defines attributes specific to wider screen widths.
+ * ------------------------------------------------------------------------------------
+ */
+@media screen and (min-width:840px)
+{
+  /* Note: This section is here to deal with anything specific to widths greater than
+   *       840px */
+section pre{overflow:visible;padding-right:0px;}
+}
+
+/**
+ * ------------------------------------------------------------------------------------
+ * The following section defines any changes of layout required for the printer.  This 
+ * might include dropping out the banner graphic, for example.
+ * ------------------------------------------------------------------------------------
+ */
+@media print
+{
+  header figure{background-image:none;}
+}
+/**---------------------------------------------
+ *             End of Code
+ *----------------------------------------------
+ */

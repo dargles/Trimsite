@@ -1,6 +1,6 @@
 <?php
 /**
- * contact.php gives the contact details for our project
+ * readme.php displays the readme file for our website
  *
  * It instantiates our class, webpage, and calls the method that returns the initial 
  * html for the top of our page.  The main centre section of this file makes space to 
@@ -8,7 +8,7 @@
  * of our boilerplate code.
  * 
  * @author David Argles <d.argles@gmx.com>
- * @version 11-09-2015, 16:31h
+ * @version 11-09-2015, 16:32h
  * @copyright 2015 Haven Consulting
  */
 
@@ -22,17 +22,16 @@
 ?>
       <!-- The main page content follows.  You can change this as you wish -->
       
-      <h3>Contact</h3>
-      <p>If you want to get on touch, you can:</p>
-      <ul>
-        <li>
-          Use the <a href="http://argles.org/trimsite/contact.php#discussion">
-          TrimSite</a> discussion area, or
-        </li>
-        <li>
-          email me on <a href="mailto:d.argles@gmx.com">d.argles@gmx.com</a>.
-        </li>
-      </ul>
+      <h3>The Readme File</h3>
+      <p>
+        There is a readme.txt file in the main directory.  This is displayed 
+        below so you can have easy access to it, but please note that doing 
+        so makes this page so it only displays properly at full screen width.
+        If you've only got a narrow screen available, you could try printing 
+        this page out, maybe?
+      </p>
+      
+      <pre><?php include("trimsite/documentation/readme.txt"); ?></pre>
 
       <!-- End of main page content -->
 <?php
