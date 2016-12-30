@@ -1,6 +1,6 @@
 *********************************************************************************
 * Filename:     quickstart.txt                                                  *
-* Version:      11.09.2015, 22:23hr                                             *
+* Version:      30.12.2016, 15:33h                                              *
 * Author:       David Argles, daargles@gmail.com                                *
 * Description:  This file gives instructions for how to set up a simple site    *
 *               starting with the Trimsite package.  The fancy stuff can be     *

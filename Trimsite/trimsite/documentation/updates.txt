@@ -1,9 +1,112 @@
 ******************************************************************************************
-* Filename:	updates.txt
-* Author:       David Argles (daargles@gmail.com)
-* Time/Date:    As below
-* Purpose:      To record updates to site files
+* Filename:	  updates.txt
+* Author:     David Argles (daargles@gmail.com)
+* Time/Date:  As below
+* Purpose:    To record updates to site files
 ******************************************************************************************
+
+Time: 	 30-12-16, 14:56h
+Coder:	 David
+Notes:
+CSS template fixed-menu4.css now sorted so it displays sub-menus.
+
+--- end of update ---
+
+Time: 	 30-12-16, 13:03h
+Coder:	 David
+Notes:
+CSS template blank4.css now sorted so it displays sub-menus.
+
+--- end of update ---
+
+Time: 	 30-12-16, 12:02h
+Coder:	 David
+Notes:
+CSS template personal4.css now sorted so it displays sub-menus.
+
+--- end of update ---
+
+Time: 	 27-12-16, 15:35h
+Coder:	 David
+Notes:
+CSS template left-menu4.css now sorted so it displays sub-menus.
+
+--- end of update ---
+
+Time: 	 27-12-16, 11:19h
+Coder:	 David
+Notes:
+Made a start on updating the CSS templates to allow for nested sub-menus.  So far, have 
+sorted:
+- ecs-module-4.css
+- trimsite4.css
+- back-pic4.css
+
+--- end of update ---
+
+Time: 	 19-12-16, 15:39h
+Coder:	 David
+Notes:
+
+Major update to version 4.0:
+This is not a big change in terms of lines of code, but huge in terms of concept.  The 
+menu is now built by a separate *recursive* method in the webpage class.  This means it 
+can handle sub-menus, sub-sub-menus and sub menus nested to any depth you like 
+(apparently it might break if one were to try to recurse to a depth of 99 or 100, 
+though...).
+
+Implications:
+1) The basic TrimSite package should now handle:
+   - pages being put in sub-directories, and 
+   - sub/sub-sub menu structures
+   without any changes to the TrimSite code.
+2) TrimSitePlus is now redundant.
+3) The example CSS files will need updating to display nested sub-menus.
+
+It will all also need proper testing ;-)
+
+--- end of update ---
+
+Time: 	 17-12-16, 15:19h
+Coder:	 David
+Notes:
+* Small update to back-pic.css to fix the background picture.
+
+--- end of update ---
+
+Time: 	 16-12-16, 16:33h
+Coder:	 David
+Notes:
+Updated for version 3.5:
+* The path parameter is now completely removed, so TrimSite works out the various bits of 
+  path info for itself (page name, path to page, path from page to the <trimsite> 
+  directory, path from website rrot to the <trimsite> directory, etc).
+* The render method is now altered so that it doesn't work out the menu -every- time it's 
+  called!
+* It's also possible to set {{content}} and call render just once to render the whole page.
+
+--- end of update ---
+
+Time: 	 14-12-16, 20:14h
+Coder:	 David
+Version: 3.41
+Notes:   Made the path parameter optional, so default is "" (i.e. page is in root 
+         directory).
+
+--- end of update ---
+
+Time: 	12-12-16, 00:02h
+Coder:	David
+Notes:
+Updated for trimsite 3.4:
+* Main change is the introduction of "path" when webpage class is instantiated.  Although 
+  this makes TrimSite just a tad more complicated, going against the KISS mantra, it 
+  allows more flexibility when adding in extras.  Hopefully it will make for a smooth 
+  transition to TrimSitePlus.  Maybe...
+* Updated the documentation to reflect the changes; and 
+* One or two other small changes made.
+
+--- end of update ---
 
 Time: 	11-09-15, 22:40h
 Coder:	David

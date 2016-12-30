@@ -1,6 +1,6 @@
 ********************************************************************************
 * Filename:     readme.txt                                                     *
-* Version:      13.09.2015, 09:40hr                                            *
+* Version:      30.12.2016, 15:30h                                             *
 * Author:       David Argles, daargles@gmail.com                               *
 * Description:  Read Me file for this website. It explains how the site works  * 
 *               and how to maintain it.                                        *
@@ -28,7 +28,7 @@ always be!) but the idea is that:
 3) The boilerplate code required for each page is provided by a template file 
    called "template.html".  This is held in <trimsite/templates>.  The 
    boilerplate code includes all the page header stuff and footer stuff.  The 
-   menu boilerplate code is also contained in <trimsite/templates> in two PHP 
+   menu boilerplate code is also contained in <trimsite/templates> in five PHP 
    "partials".
 
 4) All the information that is repeated from page to page throughout the site 
@@ -55,7 +55,8 @@ Layout Rationale
 ================
  8) Trimsite is designed for small sites, so the idea is that each display page 
     is defined by a corresponding <pagename.php> page in the site's root 
-    directory.
+    directory.  However, from version 4 onwards, TrimSite will cope 
+    automatically if you put some (or all) of the pages in subdirectories.
 
  9) All the graphics necessary to display the template page are held in the 
     <trimsite/graphics> directory.  The expectation is that you will create a 
@@ -71,7 +72,7 @@ Layout Rationale
       data such as site title, menu definitions, etc));
     - "template.html" contained in <trimsite/templates>, which defines the 
       template HTML code for our pages;
-    - "cssfiles/trimsite3.css" (the CSS file for the template page); and
+    - "cssfiles/xxx.css" (the CSS file for the template page); and
     - "examplePage.php" (the pro forma for a basic site web page).  This page 
       may be copied into the root directory and renamed as appropriate to 
       create a new page for the website.

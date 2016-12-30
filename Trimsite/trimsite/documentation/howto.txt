@@ -1,6 +1,6 @@
 *********************************************************************************
 * Filename:     howto.txt                                                       *
-* Version:      11.09.2015, 22:26hr                                             *
+* Version:      11.12.2016, 23:46hr                                             *
 * Author:       David Argles, d.argles@gmx.com                                  *
 * Description:  This file gives explains how the example page works.  The       *
 *               basic stuff can be found in "quickstart.txt"                    *
@@ -35,7 +35,7 @@ design philosophy in readme.txt!
 
     The reason for moving this line from the individual pages to the __construct 
     method is that it then only appears -once- ;-) making it easier to remove 
-    all instances when one has finished develolping.
+    all instances when one has finished developing.
 
  3) The class definition:
     ---------------------
