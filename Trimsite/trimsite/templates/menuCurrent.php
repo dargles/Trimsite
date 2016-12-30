@@ -1,1 +1,1 @@
-<?php $menu .= "\n        <a href=\"$page\" class=\"current\">$name</a>"; ?>
+<?php $result .= $padding."        <a href=\"$this->pagepath$page\" class=\"current\">$name</a>\n"; ?>
