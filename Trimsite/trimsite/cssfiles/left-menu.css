@@ -1,10 +1,10 @@
 /**
- * left-menu.css provides an old-skool website layout with a left-hand menu panel
+ * left-menu4.css provides an old-skool website layout with a left-hand menu panel
  *
  * It uses the CSS3 idea of defined sections
  * 
  * @author David Argles <d.argles@gmx.com>
- * @version 21-09-2016, 22:15h
+ * @version 27-12-2016, 15:34h
  * @copyright 2016 Haven Consulting
  */
 
@@ -72,7 +72,8 @@ header p
 header img{height:50px;float:left;margin:30px 10px 0 -90px;}
 header figure{height:0px; margin:0;}
 
-/* nav is the navigation bar.  nav itself and the menu links are redefined in 
+/* -----------------------------------------------------------------------------
+ * nav is the navigation bar.  nav itself and the menu links are redefined in 
  * the @media sections for the various screen widths; here we define the basics.
  */
 nav
@@ -80,25 +81,41 @@ nav
   margin:0 auto;
   background-color:black;
   text-align:center;
-  height:2em;
+  height:34px;
   padding:10px;
   float:left;
   width:100px;
 }
-/* The inner nav needs to not inherit the outer nav's left padding 
-nav nav{padding-left:0px;}*/
+/* The inner nav needs to not inherit the outer nav's left padding */
+nav nav{padding:0px 0 0px 0;width:500px;text-align:left;border-radius:0px 10px 10px 0px;background-color:transparent;}
+nav nav a{width:100px;}
+/* The inner a's need to not inherit the nav's float left */
+/*nav nav a{float:none;}*/
 /* a#menu is the menu icon. It needs to be hidden at normal widths */
 nav img{display:none;}
-nav a
+nav a, nav nav a:first-of-type
 {
   display:block;
-  color:white;
-  padding:0.5em 1em 0.5em 0em;
+  color:white;;
+  padding:8px 0px 8px 0px;
   text-align:center;
+  /*margin:5px 0 5px 0;*/
+  background:linear-gradient(#222, black, #111);
 }
+/*nav nav a:first-of-type{margin:0 0 5px 0;}*/
+nav nav a:last-of-type{border-radius:0px 10px 10px 0px;}
+nav nav{padding:0;margin-bottom:10px;}
+nav nav a{margin-right:-20px;}
 nav a:hover{color:#ccc;}
-nav a.current{color:gray;}
+nav a.current, nav nav a.current{color:gray;}
 nav a:link, a:visited{text-decoration:none;}
+/* We need to hide the sub-menu... */
+nav nav a{display:none;}
+/* ...until we hover over it */
+nav nav:hover > a
+{
+  display:inline-block;
+}
 
 /* section defines the main content area */
 section
@@ -130,46 +147,54 @@ footer
 
 /**
  * ------------------------------------------------------------------------------------
- * The following section defines attributes specific to narrow screen widths.  In 2015, 
+ * The following section defines attributes specific to narrow screen widths.  In 2017, 
  * this applies mainly to mobile phones in portrait mode.
  * ------------------------------------------------------------------------------------
  */
 @media screen and (max-width:520px)
 {
-    body{background-color:black;}
-    header{margin:0 10px 0 10px;padding-bottom:60px;}
-    header h3{margin-left:75px;font-size:1.5em;}
-    header p{margin-left:85px;font-size:0.9em;}
-    header img{height:50px;float:left;margin:20px 10px 0 5px;}
-    header figure{margin:0 10px 0 10px;}
-	nav
+  body{background-color:black;}
+  header{margin:0 10px 0 10px;padding-bottom:60px;}
+  header h3{margin-left:75px;font-size:1.5em;}
+  header p{margin-left:85px;font-size:0.9em;}
+  header img{height:50px;float:left;margin:20px 10px 0 5px;}
+  header figure{margin:0 10px 0 10px;}
+    
+	nav, nav nav
 	{
 	  background-color:#ccc;
 	  margin:0 10px 0 10px;
-      overflow:hidden;
-	  padding:0.6em 0.4em 0em 5px;
-      font-size:small;
-      float:none;
-      width:inherit;
+    overflow:hidden;
+	  padding:0px 5px 0px 5px;
+    font-size:small;
+    float:none;
+    width:inherit;
 	  height:auto;
 	}
-	nav a
+	nav nav{float:left;margin:0;}
+	nav a, nav nav a:first-of-type
 	{
-	  background-color:#aaa;
+	  background:#999;
 	  padding:4px 4px 4px 4px;
-	  margin-right:0.2em;
+	  margin-right:3px;;
 	  border-width:0em;
 	  border-radius:5px 5px 0px 0px;
 	  float:left;
 	}
+	nav nav a{width:auto;margin:0;}
+	nav nav a{border-radius:0px;}
+	nav nav a:last-of-type{border-radius:0px;}
+	nav nav a:first-of-type{width:auto;margin-right:0;}
+	nav nav:hover > a{display:block;float:none;}
 	nav a:hover{color:#ccc;}
-	nav a.current{background-color:white;}
-    section{margin:0 10px 0 10px;}
-    section h3{font-size:1.1em;}
-    section {font-size:small;}
-    section img{width:280px;}
-    section table{font-size:small;}
-    footer {margin:0 10px 0 10px;font-size:small;border-radius:0px 0px 5px 5px;}
+	nav a.current, nav nav a.current{background:white;}
+	
+  section{margin:0 10px 0 10px;}
+  section h3{font-size:1.1em;}
+  section {font-size:small;}
+  section img{width:280px;}
+  section table{font-size:small;}
+  footer {margin:0 10px 0 10px;font-size:small;border-radius:0px 0px 5px 5px;}
 }
 
 /**
@@ -231,7 +256,6 @@ footer
 	{
 	  border-radius:0px 0px 0px 0px;
     }
-    nav a {background:linear-gradient(#222, black, #111);}
     nav a:hover{background:linear-gradient(#111, black, #000);}
 	section {margin:0 120px 0 120px;}
 	footer

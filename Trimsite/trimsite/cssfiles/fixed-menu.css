@@ -1,10 +1,11 @@
 /**
  * fixed-menu.css provides a layout with a fixed menu at the top of the screen.
  *
- * It uses the CSS3 idea of defined sections.
+ * It uses the CSS3 idea of defined sections. This version (4) copes with
+ * sub-menus.
  * 
  * @author David Argles <d.argles@gmx.com>
- * @version 21-09-2016, 22:14h
+ * @version 30-12-2016, 13:06h
  * @copyright 2016 Haven Consulting
  */
 
@@ -83,21 +84,25 @@ nav
   text-align:center;
   border-radius:0px 0px 10px 10px;
 }
-/* The inner nav needs to not inherit the outer nav's left padding or margin 
-nav nav{padding-left:0px;margin-left:0px;} */
-/* a#menu is the menu icon. It needs to be hidden at normal widths */
+/* nav img is the menu icon. It needs to be hidden at normal widths */
 nav img{display:none;}
-nav a
+nav nav a{display:none;}
+nav a, nav nav, nav nav a:first-of-type
 {
-  display:block;
+  position:static;
+  display:inline;
   float:left;
   background-color:black;
   color:white;
-  padding:0.35em 1em 0 0em;
-  text-align:center;
+  padding:6px 16px 0 5px;
+  text-align:left;
 }
+nav nav{padding:0;margin:0;}
+nav nav, nav nav a{width:4em;}
+nav nav a:last-of-type{padding-bottom:5px;}
+nav nav:hover > a{display:block;}
 nav a:hover{color:#ccc;}
-nav a.current{color:gray;}
+nav a.current, nav nav a.current{color:gray;}
 nav a:link, a:visited{text-decoration:none;}
 
 section{background-color:rgba(00,00,00,0.5);padding:10px 100px 10px 100px;}
@@ -148,6 +153,8 @@ footer
       margin-right:0.2em;
       padding-bottom:4px;
     }
+    nav nav{min-width:4em;}
+    nav nav a:first-of-type{padding-top:0.2em;}
 
     section{padding:0px;}
     section h3{font-size:1.1em;}

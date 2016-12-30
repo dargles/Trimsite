@@ -1,11 +1,12 @@
 /**
- * personal4.css aims to get a modern layout
+ * ecs-module.css provides a basic website layout designed specifically for ECS 
+ * notes pages
  *
  * It uses the CSS3 idea of defined sections.  "main" is used as a container
- * element for the entire page.  This verion (4) allows for sub-menus.
+ * element for the entire page.
  * 
  * @author David Argles <d.argles@gmx.com>
- * @version 30-12-2016, 11:40h
+ * @version 23-12-2016, 04:16h
  * @copyright 2016 Haven Consulting
  */
 
@@ -30,124 +31,135 @@ body
   font-family:verdana,arial,sans-serif;
   color:black;
   background-color:#cc9;
-  margin:8px;
 }
-body a{text-decoration:none;}
+a{text-decoration:none;}
+.indent{padding-left:40px;}
+.error{padding-left:40px;color:red;}
+.centredLabel{font-weight: bold;}
 
 /* main is the container for our site */
 main
 {
-  display:flex;
-  flex-direction:column;
   max-width:850px;
-  min-width:280px;
+  min-width:340px;
   margin:0 auto;
   background-color:white;
-  border-radius:0;
+  border-radius:10px 10px 10px 10px;
   box-shadow: 	0px 10px 20px rgba(0,0,0,0.6);
 }
 
+/* header defines the area above the nav bar.  It contains the page title, the 
+ * page subtitle (or "tagline"), the site logo, and "figure" - the banner graphic.
+ */
+header
+{
+  margin-bottom:0;
+  padding:5px 0 0px 0px;
+  border-radius:10px 10px 0px 0px;
+  text-align:left;
+  background-color:#945;
+}
+header h3{font-size:2em;color:white;padding:0px;margin:0.2em 10px 0 110px;}
+header p{font-size:1em;font-style:italic;color:white;padding:2px 0 5px 0px;margin:0 0 0 120px;}
+/* header img is the site logo.  It's expected to be {50px high by) 60px wide */
+header img
+{
+  width:60px;
+  float:left;
+  margin:13px 10px 0 30px;
+  border-radius:5px;
+}
+header > figure{display:none;}
+/*----------------------------------------------------------------------------*/
 /* nav is the navigation bar.  nav itself and the menu links are redefined in 
  * the @media sections for the various screen widths; here we define the basics.
  */
 nav
 {  
-  order:-1;
-  background-color:brown;
-  height:29px; /* height:2em; */
-  padding-left:100px;
-  overflow:visible;
+  margin:0 auto;
+  background-color:/*#495*/gray;
+  height:29px;
+  padding:0 0 0 105px; /* left padding is -5px to allow for 5px indent on button */
 }
-/* nav nav defines the sub-menus */
 /* nav img is assumed to be the menu icon that only appears at narrow 
- * widths (mobiles) */
+ * widths (mobiles)
+ */
 nav img{display:none;}
-/*nav nav:hover > a{display:block;}*/
-
 /* -----------------------------------------------------------------------------
  * nav a defines the main menu.  This is visible when the menu icon isn't
  */
-nav a, nav nav /* The menu items */
+nav a, nav nav
 {
-  display:block;
-  float:left;
   text-decoration:none;
   color:white;
-  width:80px;
-  padding:6px 16px 0 0;
+  padding:6px 16px 0 5px;
+  background-color:inherit;
+  vertical-align:top;/* remove this? */
+  float:left;
 }
-nav nav{padding:0 16px 0 0;}
-/* Now we need to define what happens for sub-menus */
+nav nav{height:21px;}
+nav a.current{color:black;} /* Current page appears in black on menu */
+nav a:hover{color:#ccc;} /* Grays a little when hovering over the link */
+
+/* -----------------------------------------------------------------------------
+ * nav nav defines any sub-menus.
+ */
+nav nav {padding-top:6px;}
 nav nav a
 {
   display:none;
   float:none;
-  opacity:0.0;
-  filter: alpha(opacity=0); /* For IE8 and earlier */
-  padding:5px 10px 0px 5px;
-  background-color:brown;
+  padding:10px 10px 0px 10px;
   height:24px;
 }
-nav nav a:first-of-type {display:inline;opacity:0.99;height:24px;padding:5px 0px 0px 5px;}
-nav nav:hover > a
-{
-  display:block;
-  opacity:0.99;
-  filter: alpha(opacity=100);  For IE8 and earlier 
-  margin-top:10px;
-  /*background-color:black;*/
-}
-nav a:hover, nav nav a:hover{color:#ccc;} /* Grays just a little when hovering over the link */
-
-nav nav a{display:none;}
-nav nav a:first-of-type{display:block;}
+nav nav a:first-child {display:inline;opacity:0.99;height:24px;padding:0px 0px 4px 5px;}
+nav nav a:last-child{padding-bottom:10px;border-radius:0px 0px 10px 10px;}
 nav nav:hover > a{display:block;}
-/*nav a
-{
-  text-decoration:none;
-  color:white;
-  padding:6px 0px 0px 16px;
-}*/
-nav a.current, nav nav a.current{color:#000;} /* Current page is in black */
 
-/*----------------------------------------------------------------------------*/
-/* header defines the area below the nav bar.  It contains the page title, the 
- * page subtitle (or "tagline"), the site logo, and "figure" - the banner graphic.
- */
-header
+.post
 {
-  background-image:url('../graphics/Backdrop-forest.jpg');
-  margin:0px 0 0 0;
-  height:220px;
-  padding:5px 0 0px 0px;
-  text-align:left;
-  color:brown;
-  text-shadow: 2px 2px 5px black;
+  border:1px solid gray;
+  margin:10px 40px 10px 40px;
+  background-image:url('../../trimsite/graphics/paper-mauve.jpg');
 }
-header h3{color:#ff0;font-size:2em;text-align:right;margin:0;padding:15px 100px 0 0px;}
-header p{color:#ff0;font-size:1em;font-style:italic;font-weight:bold;text-align:right;margin:0;padding:120px 100px 0 0px;}
-header img{float:left;height:200px;width:200px;border-radius:200px;margin:70px 0 10px 100px;border-width:1px;border:solid;position:relative;}
-
+.post p.postnote{font-style:italic;font-size:small;color:gray;text-align:right;}
 
 /* section defines the main content area */
 section
 {
-  clear:both;
   background-color:white; /* Don't think this is necessary */
-  padding:3em 100px 10px 100px;
+  padding:10px 100px 10px 100px;
 }
-section h3{padding-left:10px;}
-section p{padding:0 10px 0 20px;}
+section h3{padding:0 10px 0 10px;}
+section h4{padding-left:20px;}
+section h5{padding-left:20px;margin:0;font-size:medium;font-style:italic;}
+section p{padding:0 20px 0 20px;}
 section p.centre{text-align:center}
-section table{margin-left:auto; margin-right:auto;font-style:italic;border-collapse:collapse;}
-section tr{border-style:solid;border-width:1px 0 1px 0}
+section table{margin-left:20px;font-style:italic;}
+section table th{text-align:left;}
+
+section table.assessment, table.programme{border-collapse:collapse;/*border:1px solid;*/}
+section table.assessment th, table.programme th{font-style:normal;text-align:left;padding:5px 0 5px 0;}
+section table.assessment tr, table.programme tr{border-bottom:1px solid;border-top:1px solid;}
+section table.assessment td, table.programme td{border-bottom:1px solid;padding:5px 0 5px 10px;}
+section table.programme{margin:0 20px 0 20px;}
+section table.programme tr.programme-old{background-color:#ccc;}
+
+section table.events{border-collapse:collapse;}
+section table.events td{padding:5px;border-width:0;border-style:none;}
+section table.events tr{border-width:1px 0 0px 0;border-style:solid;}
+section table.events tr.old{background-color:#ccc;}
+section table.events tr.continue{border-width:0;border-style:none;}
+
+section table.coursework{padding-left:0;margin:20px;border-style:solid;border-width:1px;}
+
 section td.wide{width:15em;}
 section td.r-align{text-align:right;}
 section img{display:block; margin-left:auto; margin-right:auto;}
-section img.right{float:right; height:120px; width:auto;margin:0 10px 0 10px;}
-section img.left{float:left; height:120px; width:auto;margin:0 10px 0 20px;}
-section pre{overflow:scroll;padding:20px;}
-section ul{padding-right:40px;}
+section img.right{float:right; height:120px; margin-left:10px;}
+section img.left{float:left; height:120px; margin-right:10px;}
+section ul.indent li{margin-left:20px;}
+section li{padding-bottom:10px;}
 
 /* footer defines the bottom of the page */
 footer
@@ -161,19 +173,18 @@ footer
 }
 footer p{padding:0 10px 0 10px;}
 
-.left{float:left;}
-
 /**
  * ------------------------------------------------------------------------------------
  * The following section applies to ALL screen widths.  It's here to undo any IE 
  * quirks inserted in the section above.
  * ------------------------------------------------------------------------------------
  */
-@media screen
+@media screen and (min-width:250px)
 {
   /* Note: If we design our template correctly, we can avoid having to undo IE quirks.
    *       One principle is to use padding rather than margin - it avoids browsers
    *       interpreting them differently ;-) */
+  nav nav:hover > a{margin-top:0px;}
 }
 
 /**
@@ -182,19 +193,23 @@ footer p{padding:0 10px 0 10px;}
  * this applies mainly to mobile phones in portrait mode.
  * ------------------------------------------------------------------------------------
  */
-@media screen and (max-width:580px)
+@media screen and (max-width:550px)
 {
-  /* We haven't a lot of room.  So the first job is to reduce the font size */
+  /* We haven't a lot of room.  So the first job is to reduce the size of the header 
+   * as much as we can */
   body{font-size:small;}
+  header h3{margin-left:75px;font-size:1.8em;}
+  header p{margin-left:85px;font-size:1.1em;}
+  header img{margin:6px 10px 0 10px;}
 
   /*---------------------------------------------------------------------------
    * Sort out the change in menu layout */
    
   /* Set a small left margin */
-  nav{margin:0;padding-left:10px;padding-top:2px;height:25px;}
+  nav{margin:0 auto;padding-left:10px;padding-top:2px;height:25px;}
   
   /* Swap over to the menu icon */
-  nav img, a#menu
+  nav img 
   {
     display:inline;
     float:left;
@@ -204,24 +219,26 @@ footer p{padding:0 10px 0 10px;}
   }
  
   /* Now format up the primary menu entries */
-  nav a, nav nav, nav nav a:first-of-type
+  nav a, nav nav, nav nav a:first-child
   {
     display:none;
     float:none;
     position:relative;
     padding:5px 10px 5px 10px;
     margin-left:40px;
-    width:60px;
+    width:80px;
     height:auto;
-    background-color:white;
+    background-color:#ccc;
     border:solid black;
     border-width:0 2px 0 2px;
     color:black;
+    /*clear:both;*/
   }
-  nav:hover > a, nav:hover > nav, nav nav:hover > a:first-of-type, nav:hover > nav a:first-of-type{display:block;}
-  nav a:hover, nav nav a:hover{color:blue;}
+  nav:hover > a, nav:hover > nav, nav:hover > nav a:first-child{display:block;}
+  nav a:hover, nav nav a:hover {color:blue;}
   nav a:first-of-type {border-width:2px 2px 0px 2px;border-radius:5px 5px 0 0;}
   nav a:last-of-type {border-width:0 2px 2px 2px;border-radius:0 0 5px 5px;}
+
   /* And the sub-menu entries */
   nav nav 
   {
@@ -231,12 +248,13 @@ footer p{padding:0 10px 0 10px;}
   }
   nav nav a 
   {
+    /*position:absolute;*/
     display:none;
-    margin-left:90px;
+    margin-left:105px;
     padding-top:0;
     float:left;
-    background-color:#fff;
-    width:60px;
+    background-color:#ddd;
+    width:80px;
   }
   nav nav a:first-child 
   {
@@ -245,20 +263,14 @@ footer p{padding:0 10px 0 10px;}
     border-radius:0 0 0px 0px;
     margin-left:0px;
   }
-  nav nav:hover > a:first-child {width:145px;border-width:2px 2px 0px 2px;border-radius:0 5px 0px 0px;}
+  nav nav:hover {background-color:#ddd;}
+  nav nav:hover > a {display:block;background-color:#ddd;}
+  nav nav:hover > a:first-child {width:185px;border-width:2px 2px 0px 2px;border-radius:0 5px 0px 0px;}
   nav nav:hover > a:last-child {padding-bottom:0px;}
-  nav a.current, nav nav a.current{background-color:#ddd;} /* Current page is in black */
-
-  /*--------------------------------------------------------------------------*/
-
-  header{height:160px;}
-  header h3{padding-right:10px;}
-  header p{padding:60px 10px 0 0px;}
-  header img{float:left;height:100px;width:100px;border-radius:100px;margin:65px 0 0 10px;}
 
   /* This bit just tinkers with the padding a little bit to maximise the usage of 
    * the available space */
-  section{padding:1em 0 10px 0;}
+  section{padding:10px 0 10px 0;}
   section h3{font-size:1.1em;}
   section img{width:280px;}
   footer {padding:10px 0 10px 0;}
@@ -270,15 +282,17 @@ footer p{padding:0 10px 0 10px;}
  * tend to apply to mobile phones in landscape mode, for example.
  * ------------------------------------------------------------------------------------
  */
-@media screen and (min-width:581px) and (max-width:749px)
+@media screen and (min-width:551px) and (max-width:780px)
 {
-  /* For intermediate widths, we reduce the side margins to 0 (we can allow the h3 and 
-   * p styles to give us the necessary indents) */
-  nav{padding-left:10px;}
-  nav img{padding-left:0px;}
-  header h3{padding-right:10px;}
-  header p{padding:120px 10px 0 0px;}
-  header img{margin:85px 0 0 10px;height:150px;width:150px;border-radius:150px;}
+  /* For intermediate widths, we shunt the header over to the left a little more to 
+   * make a bit more room */
+  header h3{margin-left:75px;}
+  header p{margin-left:85px;}
+  header img{width:60px;float:left;margin:12px 10px 0 10px;}
+
+  /* We then then reduce the side margins to 0 (we can allow the h3 and p styles to 
+   * give us the necessary indents) */
+  nav{margin:0 auto;padding-left:10px;}
   section{padding:10px 0 10px 0;}
   footer{padding:10px 0 10px 0;}
 }
@@ -288,11 +302,10 @@ footer p{padding:0 10px 0 10px;}
  * The following section defines attributes specific to wider screen widths.
  * ------------------------------------------------------------------------------------
  */
-@media screen and (min-width:750px)
+@media screen and (min-width:781px)
 {
   /* Note: This section is here to deal with anything specific to widths greater than
-   *       840px */
-  section pre{overflow:visible;padding-right:0px;}
+   *       600px.  But in this instance, it's all dealt with by the main section. */
 }
 
 /**
@@ -303,7 +316,18 @@ footer p{padding:0 10px 0 10px;}
  */
 @media print
 {
+  body{background-color:#fff;}
+  main{box-shadow:none;}
+  header{border-radius:0;}
   header figure{background-image:none;}
+  /* We don't need the nav bar when printing */
+  nav{display:none;}
+  /* We then then reduce the side margins to 0 (we can allow the h3 and p styles to 
+   * give us the necessary indents) */
+  section{padding:10px 0 10px 0;}
+  footer{padding:10px 0 10px 0;border-radius:0;}
+  /* We'll turn off the post background (saves ink) and border */
+  article.post{border:none;background-image:none;}
 }
 /**---------------------------------------------
  *             End of Code

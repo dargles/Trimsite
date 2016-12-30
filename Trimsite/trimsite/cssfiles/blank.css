@@ -1,5 +1,5 @@
 /**
- * blank.css is a responsive skeleton for trimsite
+ * blank4.css is a responsive skeleton for trimsite
  *
  * It uses the CSS3 idea of defined sections:
  * - "main" is used as a container element for the entire page;
@@ -7,10 +7,11 @@
  * - "nav" is used as the navigation (menu) bar;
  * - "section" holds the main page content; and
  * - "footer" is the page footer.
+ * This version allows for sub-menus.
  * 
  * @author David Argles <d.argles@gmx.com>
- * @version 11-09-2015, 16:58h
- * @copyright 2015 Haven Consulting
+ * @version 30-12-2016, 12:06h
+ * @copyright 2016 Haven Consulting
  */
 
 /**
@@ -82,13 +83,19 @@ nav
 }
 /* The inner nav needs to not inherit the outer nav's left padding */
 nav nav{padding-left:0px;}
-/* a#menu is the menu icon. It needs to be hidden at normal widths */
-nav a#menu{display:none;}
+/* nav img is the menu icon. It needs to be hidden at normal widths */
+nav img{display:none;}
 nav a
 {
   text-decoration:;
   color:;
 }
+/* Let's hide the sub-menu items until hovering... */
+nav nav a{display:none;}
+/* ...but we do need to display the first item in any sub-menus */
+nav nav a:first-of-type{display:inherit;}
+/* And display the submenu items whem hovering */
+nav nav:hover > a{display:inline;}
 nav a.current{color:;}
 nav a:hover{color:;}
 
@@ -125,7 +132,7 @@ footer p{}
 
 /**
  * ------------------------------------------------------------------------------------
- * The following section defines attributes specific to narrow screen widths.  In 2015, 
+ * The following section defines attributes specific to narrow screen widths.  In 2016, 
  * this applies mainly to mobile phones in portrait mode.
  * ------------------------------------------------------------------------------------
  */
@@ -136,9 +143,13 @@ footer p{}
   header p{font-size:;}
   header img{height:;}
 
-  nav{}
+  /* Let's display the menu icon... */
+  nav img{display:inline;}
+  /* ...and hide the menu items until hovering */
+  nav a, nav nav a:first-of-type{display:none;}
+  /*  */
+  nav:hover > a, nav:hover > nav a:first-of-type{display:inline;}
   nav a{}
-  nav a:hover{}
   nav a.current{}
 
   section{}

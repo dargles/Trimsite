@@ -5,7 +5,7 @@
  * It uses the CSS3 idea of defined sections
  * 
  * @author David Argles <d.argles@gmx.com>
- * @version 21-09-2016, 22:12h
+ * @version 27-12-2016, 11:18h
  * @copyright 2016 Haven Consulting
  */
 
@@ -28,8 +28,8 @@ main, header, banner, section, footer, aside, nav, article, figure {display:bloc
 body
 {
   font-family:verdana,arial,sans-serif;
-  background-image:url('../graphics/desert-island.jpeg');
-  background-size:100%; /*cover;*/
+  background:url('../graphics/desert-island.jpeg') no-repeat fixed;
+  background-size:cover;
 }
 
 /* main is the container for our site */
@@ -66,27 +66,49 @@ nav
 {
   margin:0 auto;
   background-color:black;
-  text-align:center;
+  /*text-align:center;*/
   height:2em;
-  padding-left:80px;
+  padding:0px 0 0 80px;
   border-radius:10px 10px 10px 10px;
 }
 /* The inner nav needs to not inherit the outer nav's left padding */
 nav nav{padding-left:0px;}
 /* a#menu is the menu icon. It needs to be hidden at normal widths */
 nav img{display:none;}
-nav a
+nav a, nav nav
 {
   display:block;
   float:left;
   background-color:black;
   color:white;
-  padding:0.35em 1em 0 0em;
-  text-align:center;
+  padding:8px 5px 0 5px;
+  /*text-align:center;*/
+  height:auto;
 }
 nav a:hover{color:#ccc;}
 nav a.current{color:gray;}
 nav a:link, a:visited{text-decoration:none;}
+/* Now we need to define what happens for sub-menus */
+nav nav a
+{
+  display:none;
+  float:none;
+  opacity:0.0;
+  filter: alpha(opacity=0); /* For IE8 and earlier */
+  padding:5px 5px 0px 5px;
+  background-color:black;
+  height:24px;
+}
+nav nav a:first-child {display:inline;opacity:0.99;height:24px;padding:0px 0px 4px 5px;}
+nav nav a:last-child {border-radius:0px 0px 10px 10px;}
+nav nav:hover > a
+{
+  display:block;
+  opacity:0.99;
+  filter: alpha(opacity=100);  For IE8 and earlier 
+  margin-top:10px;
+  background-color:black;
+}
 
 section
 {
@@ -126,24 +148,31 @@ footer
     header h3{margin-left:75px;font-size:1.9em;}
     header p{margin-left:85px;font-size:1.1em;}
     header img{margin:3px 10px 0 5px;}
-    nav
+    
+    nav, nav nav
     {
       background-color:#ccc;
       margin-top:0;
-      overflow:hidden;
-      padding:0.4em 0.4em 0px 10px;
+      /*overflow:hidden;*/
+      padding:5px 5px 0 5px;
       border-radius:10px 10px 0px 0px;
     }
-    nav a
+    nav nav{border-radius:0px 0px 5px 5px;padding-top:4px;}
+    nav a, nav nav a, nav nav a:first-child
     {
       background-color:#aaa;
-      padding:0.3em 0.3em 4px 0.3em;
+      padding: 4px 4px 4px 4px;
       margin-right:0.2em;
       border-width:0;
-      border-radius:5px 5px 0px 0px;  
+      border-radius:5px 5px 0px 0px;
+      color:white;
+      height:15px;
     }
+    nav nav a{border-radius:0px 0px 0px 0px;}
     nav a:hover{color:#ccc;}
-    nav a.current{background-color:white;}
+    nav a.current, nav nav a.current{background-color:white;color:#ccc;}
+    nav nav:hover > a{background-color:#ccc;color:#333;}
+    nav nav:hover > a.current{background-color:white;color:#333;}
     section{margin-top:-3px;padding:4px 0 10px 0;border-radius:0px 0px 0px 0px;}
     section h3{font-size:1.1em;}
     section img{width:280px;}
