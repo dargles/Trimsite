@@ -8,14 +8,14 @@
  * of our boilerplate code.
  * 
  * @author David Argles <d.argles@gmx.com>
- * @version 21-09-2016, 17:31h
+ * @version 11-12-2016, 23:32h
  * @copyright 2016 Haven Consulting
  */
 
   /* The next two lines bring in the webpage class and create a new instance.
      Don't change these lines! */
   include("trimsite/webpage.class.php");
-  $template = new webpage();
+  $template = new webpage("");
  
   /* Now we can stream our initial template code */
   echo $template->render("TOP");
